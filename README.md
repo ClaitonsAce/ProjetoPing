@@ -1,1 +1,2 @@
 # ProjetoPing
+Ainda em progresso.
