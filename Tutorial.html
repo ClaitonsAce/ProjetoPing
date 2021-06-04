@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tutorial Ping
+        </title>
+        <script>
+            function mostra(vof){
+                var btn = document.getElementById("btnMoE");
+                var span = document.getElementById("spanRegras");
+                if(vof){
+                    span.innerHTML = "* Colocar letras <br>" +
+                    "* Colocar números negativos <br>" +
+                    "* Colocar o número 0 na primera e última divisão <br>" + 
+                    "* Colocar um número maior que 223 na primeira divisão <br>" +
+                    "* Colocar 0 ou 255 na última divisão <br>" + 
+                    "* Colocar um número maior que 255 na outras divisões <br>" +
+                    "* Deixar algum campo vazio <br>" +
+                    "* Deixar alguma divisão em branco <br>" +
+                    "* Deixar de colocar os pontos entre as divisões <br>" +
+                    "* Colocar uma divisão a mais <br>" +
+                    "* Colocar espaço <br>" +
+                    "* Colocar 0 no começo do número <br>";
+                    btn.setAttribute("onclick","mostra(false);");
+                    btn.setAttribute("value","Esconder");
+                    
+                }
+                else {
+                    span.innerHTML = "";
+                    btn.setAttribute("onclick","mostra(true);");
+                    btn.setAttribute("value","Mostrar");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
+            Início <a href="#comando">(Ir até os comandos)</a>
+        </h1>
+        <p>Ao iniciar, o programa Ping pede ao usuário que selecione um número de máquinas para a rede que será criada,
+            o usuário pode escolher entre 2 a 5 máquinas na rede, menos que 2 ou mais que 5 estão impossibilitados de
+            continuar, pois ou haverá um excesso de máquinas na rede ou somente o computador do usuário irá ser criado,
+            ou nenhum computador será criado.
+        </p>
+        <h1>
+            Ip das máquinas
+        </h1>
+        <p>Após a confirmação com um número válido de máquinas na rede, será apresentado para o usuário a opção de 
+            entrar com os endereços ips das máquinas criadas pelo programa, além da própria máquina, por padrão
+            o programa irá entregar ao usuário os endereços mais comuns em computadores. (192.168.)
+        </p>
+        <h1>
+            Exceções no Ip
+        </h1>
+        <p>Como o intuito do Simulador é entregar uma experiência realista da rede e do comando ping, o usuário
+        só pode entrar com um endereço ip que corresponde ao padrão aceitavel da rede.
+        O usuário não pode: <br> <input type="button" id="btnMoE" value="Mostrar" onclick="mostra(true)"> <br>
+        <span id="spanRegras"> </span>
+        Após escolher o tipo da rede (ainda não altera nada) o usuário pode começar a usar o prompt do Ping
+        </p>
+        <h1>
+            Sua rede e escrevendo no Prompt
+        </h1>
+        <p>Á esquerda do prompt o usuário pode visualizar a rede que criou, ele também pode alterar a qualidade do sinal
+            de todas as máquinas ao clicar nas barras da internet, ele pode ligar, desligar, ou ativar o erro do DNS
+            clicando na imagem da internet. Na imagem das máquinas, pode se alterar a velocidade da internet, 
+            e desligar a internet somente da máquina, já o computador do usuário, tem uma configuração a mais,
+            o usuário pode também configurar seu computador para não ter placa de rede, que irá causar uma interação
+            com o comando ping.
+        </p>
+        <h3 id="comando" style="background-color: black; color: white">Comandos: <br>
+            ping "ip da máquina" <br>
+            ping <a href="#google">google.com / ping 8.8.8.8</a> <br>
+            ping <a href="#loopback">loopback / ping localhost / ping 127.0.0.1</a> <br>
+        </h3>
+        <h2>
+            Ping em outra máquina
+        </h2>
+        <p>Ao usar o ping em outra máquina da sua rede existe as possíveis interações: <br>
+            *Se seu computador estiver conectado na internet e sem nenhum problema com a placa de rede, ele poderá pingar outras máquinas sem problemas. <br>
+            *Se o destinatário do ping estiver sem internet, o ping retornará com o tempo limite do pedido esgotado. <br>
+            *Instabilidade na rede (internet ligando e desligando) o ping mostrará quantos pacotes foram recebidos e perdidos
+            
+        </p>
+        <h2 id="google">
+            Ping no google
+        </h2>
+        <p>
+            Ao usar o comando ping no google, há diferentes ocorrências que dependem do sinal da internet: <br>
+            * Seu computador está sem internet ou placa de rede: os pacotes do ping não irão retornar <br>
+            * Sua internet está lenta: o ping demorará mais para retornar <br>
+            * Seu DNS está com problema:  <br>
+            &nbsp;&nbsp;----*Caso tenha pingado o endereço ip do google, ele retornará sem problemas. <br>
+            &nbsp;&nbsp;----*Caso tenha pingado o endereço de dominio "google", os pacotes do ping não irão retornar. <br>
+            *Instabilidade na rede (internet ligando e desligando) o ping mostrará quantos pacotes foram recebidos e perdidos
+        </p>
+        <h2 id="loopback">
+            Ping loopback:
+        </h2>
+        <p>
+            *Se seu computador estiver sem placa de rede: <br>
+            &nbsp;&nbsp;----*o ping irá retornar "PING: transmit failed. General failure.", indicando erro ao realizar o loopback <br>
+            *Se não estiver com erro na placa de rede o loopback será realizado instantaneamente. <br>
+        </p>
+    </body>
+</html>

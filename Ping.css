@@ -38,3 +38,21 @@
     color: rgb(192, 192, 192);
     text-align: center;
 }
+.sinalpc {
+    background-image: url("Seu_computador.png");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 150px;
+}
+.sinalpc img {
+    padding-left: 15px;
+    padding-top: 35px;
+}
+.sinalpc span {
+    color: rgb(192, 192, 192);
+    padding-left: 25px;
+}
+.sinalpc p {
+    color: rgb(192, 192, 192);
+    text-align: center;
+}
